@@ -1,0 +1,24 @@
+p {
+    text-align: center;
+}
+
+img {
+    border: 2px double #006e90;
+}
+
+body {
+    background-image: url(bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+div {
+    width: 220px;
+    height: 520px;
+    margin: 5px;
+    border: 2px solid #006e90;
+    float: left;
+    padding: 7px;
+    background: rgba(255, 255, 255, 0.4);
+
