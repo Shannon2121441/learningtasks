@@ -35,13 +35,13 @@ $page =(isset($_GET['page']) && $_GET['page'] !='') ? $_GET['page'] : '';
                 <?php
                     switch($page){
                         case"works":
-                            require"works.php";
+                            require"nav/works.php";
                         break;
                         case"profile":
-                            require"profile.php";
+                            require"nav/profile.php";
                         break;
                         case"default":
-                            require"default.php";
+                            require"nav/default.php";
                         break;
                     }
                 ?>
