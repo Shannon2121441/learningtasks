@@ -1,17 +1,56 @@
+<?php
+$page =(isset($_GET['page']) && $_GET['page'] !='') ? $_GET['page'] : '';
+?>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Home Page</title>
-  </head>
-  <body>
-  <h1>Welcome to My Website! I am Shannon Alyson M. Po!</h1>
-  <ul>
-   <li><a href="index.php">HOME</a></li>
-   <li><a href="/LT2/Recipes.html">LEARNING TASK 2</a></li>
-   <li><a href="/LT3/index.html">LEARNING TASK 3</a></li>
-   <li><a href="/CLE1MT/index.html">CLE1MT</a></li>
-   <li><a href="/LT4/index.html">LEARNING TASK 4</a></li>
-   <li><a href="/LT5/index.html">LEARNING TASK 5</a></li>
-  </ul>
-  </body>
+    <head>
+        <title>Web Portfolio</title>
+        <link href="../css/stylesheet.css" type="text/css" rel="stylesheet">
+        <script src="script/script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header">
+            <h1><?php echo "Shannon's Portfolio";?></h1>
+        </div>
+        
+        <div id="wrapper">
+            <div id="navigation">
+                <div id="date">
+                    <?php
+                    echo date("<b>m/d/Y</b>") . " (" . date("l") . ")";
+                    ?>
+
+                </div>
+                <ul>
+                    <li><a href="index.php?page=default"><b>Home Page</b></a></li>
+                    <li><a href="index.php?page=works"><b>Works</b></a></li>
+                    <li><a href="index.php?page=profile"><b>Profile</b></a></li>
+                </ul>
+            </div>
+                
+            <div id="content">
+                <?php
+                    switch($page){
+                        case"works":
+                            require"works.php";
+                        break;
+                        case"profile":
+                            require"profile.php";
+                        break;
+                        case"default":
+                            require"default.php";
+                        break;
+                    }
+                ?>
+                <?php
+                
+                ?>
+            </div>
+            
+        </div>
+        
+    </body>
 </html>
